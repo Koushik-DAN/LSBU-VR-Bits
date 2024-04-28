@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="aframe.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <title>LSBU Tourguide.</title>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="faradayVid" loop="true" src="vids/faradayVid.mp4"></video>
+
+        <img id="entryImage" src="./images/home.jpeg" />
+        <img id="logo" src="./images/logo.png" />
+      </a-assets>
+
+      <!-- Menu Entity -->
+      <a-entity id="menuEntity">
+        <a-sky src="#entryImage"></a-sky>
+
+        <a-camera position="0 1 1">
+          <a-cursor color="white"></a-cursor>
+        </a-camera>
+        <!-- green route -->
+        <a-box
+          class="button-box"
+          id="greenRouteBtn"
+          height="1"
+          width="3"
+          depth=".2"
+          position="-2.5 3.5 -7"
+          onclick="window.location.href='green_route.html'"
+          color="#B640D3"
+          padding="20"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            value="Green Route"
+            color="white"
+          ></a-text>
+        </a-box>
+        <!-- student center -->
+        <a-box
+          id="studentCenterBtn"
+          height="0.5"
+          width="3"
+          depth=".2"
+          color="#B640D3"
+          position="2.5 3.5 -7"
+          onclick="window.location.href='student_center.html'"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            value="Student Center"
+            color="white"
+          ></a-text>
+        </a-box>
+        <!-- lsbu hub -->
+        <a-box
+          id="lsbuHubBtn"
+          height="0.5"
+          width="3"
+          depth=".2"
+          color="#B640D3"
+          position="-2.5 2.3 -7"
+          onclick="window.location.href='lsbu_hub.html'"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            value="Lsbu Hub"
+            color="white"
+          ></a-text>
+        </a-box>
+        <!-- borough -->
+        <a-box
+          id="boroughButton"
+          height="0.5"
+          width="3"
+          depth=".2"
+          color="#B640D3"
+          position="2.5 2.3 -7"
+          onclick="window.location.href='borough.html'"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            text="value:Borough Building; color: white;"
+          ></a-text>
+        </a-box>
+        <!-- robot 360 -->
+        <a-box
+          id="robotBtn"
+          height="0.5"
+          width="3"
+          depth=".2"
+          color="#B640D3"
+          position="0 1 -7"
+          onclick="window.location.href='robot_360.html'"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            text="value:Robot 360; color: white;"
+          ></a-text>
+        </a-box>
+
+        <a-text
+          scale="1.5 1.5 1.5"
+          position="-0.5 1.7 0"
+          text="value:VR Bits; color: white;"
+        ></a-text>
+        <a-image
+          src="#logo"
+          position="-0 2.2 0"
+          width="0.5"
+          height="0.5"
+        ></a-image>
+      </a-entity>
+    </a-scene>
+    <script src="vr.js"></script>
+  </body>
+</html>
