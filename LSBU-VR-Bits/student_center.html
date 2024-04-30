@@ -30,7 +30,7 @@
           width="3"
           depth=".2"
           color="#B640D3"
-          position="2.5 2.3 -7"
+          position="2.5 -1 -7"
           onclick="switchScenes(4)"
           event-set__enter="_event: mouseenter; color: #69157d"
           event-set__leave="_event: mouseleave; color: #B640D3"
@@ -52,14 +52,14 @@
         <a-camera position="0 1 1">
           <a-cursor color="white"></a-cursor>
         </a-camera>
-        <a-box
-          rotation="20 -50 10"
+        <a-image
+          src="images/pause-button.png"
           onclick="pauseStudent()"
-          color="#ba3467"
+          
           position="1.5 1.5 0"
-          height="0.2"
-          width="0.2"
-          depth="0.1"
+          height="0.5"
+          width="0.5"
+          
           event-set__enter="_event: mouseenter; color: #f04385"
           event-set__leave="_event: mouseleave; color: #ba3467"
         >
@@ -68,16 +68,17 @@
             position="-.5 0.1 0.2"
             text="value:Pause; color: white;"
           ></a-text>
-        </a-box>
+        </a-image>
 
-        <a-box
-          rotation="20 -50 10"
+        <a-image
+       src="images/play-button.png"
+          
           onclick="playStudent()"
-          color="#3c5ab0"
+          
           position="1.7 0.8 0"
-          height="0.2"
-          width="0.2"
-          depth="0.1"
+          height="0.5"
+          width="0.5"
+         
           event-set__enter="_event: mouseenter; color: #5882FA"
           event-set__leave="_event: mouseleave; color: #3c5ab0"
         >
@@ -86,25 +87,25 @@
             position="-.5 0.15 0.2"
             text="value:Play; color: white;"
           ></a-text>
-        </a-box>
+        </a-image>
 
-        <a-box
-          rotation="20 -50 10"
+        <a-image
+         src="images/home-page.png"
           onclick="goMenu()"
           color="#5e27d6"
           position="1.7 0.3 0"
-          height="0.2"
-          width="0.2"
-          depth="0.1"
+          height="0.5"
+          width="0.5"
+         
           event-set__enter="_event: mouseenter; color: #7333ff"
           event-set__leave="_event: mouseleave; color: #5e27d6"
         >
           <a-text
             scale=".5 .5 .5"
             position="-.5 0.1 0.2"
-            text="value:Menu; color: white;"
+            text="value:Home; color: white;"
           ></a-text>
-        </a-box>
+        </a-image>
       </a-entity>
     </a-scene>
     <script src="vr.js"></script>

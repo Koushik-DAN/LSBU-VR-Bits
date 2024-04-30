@@ -3,18 +3,17 @@ const boroughBuildingEntityEl = document.getElementById(
   "boroughBuildingEntity"
 );
 const greenRouteEntity = document.getElementById("greenRouteEntity");
-const lsbuHubEntity = document.getElementById("lsbuHubEntity");
+const keyworthEntity = document.getElementById("keyworthEntity");
 const studentCenterEntity = document.getElementById("studentCenterEntity");
 const robotEntity = document.getElementById("robotEntity");
 
 const boroughBuilding = document.getElementById("borough");
 const greenRouteVid = document.getElementById("greenRouteVid");
-const lsbuHubVid = document.getElementById("lsbuHubVid");
+const keyworthVid = document.getElementById("keyworthVid");
 const studentCenterVid = document.getElementById("studentCenterVid");
 const robotVid = document.getElementById("robotVid");
 
 const switchScenes = (vidNum) => {
-  console.log(vidNum);
   switch (vidNum) {
     case 1:
       boroughBuildingEntityEl.setAttribute("visible", true);
@@ -27,9 +26,9 @@ const switchScenes = (vidNum) => {
       greenRouteVid.play();
       break;
     case 3:
-      lsbuHubEntity.setAttribute("visible", true);
+      keyworthEntity.setAttribute("visible", true);
       menuEntityEl.setAttribute("visible", false);
-      lsbuHubVid.play();
+      keyworthVid.play();
       break;
     case 4:
       studentCenterEntity.setAttribute("visible", true);
@@ -60,12 +59,12 @@ const playGreen = () => {
   greenRouteVid.play();
 };
 
-const pauseHub = () => {
-  lsbuHubVid.pause();
+const pauseKeyworth = () => {
+  keyworthVid.pause();
 };
 
-const playHub = () => {
-  lsbuHubVid.play();
+const playKeyworth = () => {
+  keyworthVid.play();
 };
 
 const pauseStudent = () => {
@@ -84,7 +83,7 @@ const playRobot = () => {
 };
 
 const goMenu = () => {
-  window.location.href = "app.html";
+  window.location.href = "index.html";
   //   boroughBuilding.pause();
   //   greenRouteVid.pause();
   //   perryVidEl.pause();
@@ -92,7 +91,7 @@ const goMenu = () => {
 
   //   boroughBuildingEntityEl.setAttribute("visible", false);
   //   greenRouteEntity.setAttribute("visible", false);
-  //   lsbuHubEntity.setAttribute("visible", false);
+  //   keyworthEntity.setAttribute("visible", false);
   //   faradayEntityEl.setAttribute("visible", false);
 
   menuEntityEl.setAttribute("visible", true);
