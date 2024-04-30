@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="aframe.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <title>Keyworth Centre</title>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="keyworthVid" loop="true" src="vids/keyworth.mp4"></video>
+        <img id="keyworthPic" src="./images/keyworth2.jpeg" />
+        <img id="logo" src="./images/logo.jpg" />
+      </a-assets>
+      <!-- menu entity -->
+      <a-entity id="menuEntity">
+        <a-sky src="#keyworthPic"></a-sky>
+        <a-camera position="0 1 1">
+          <a-cursor color="black"></a-cursor>
+        </a-camera>
+        <a-box
+          id="keyworthBtn"
+          height="0.5"
+          width="3"
+          depth=".2"
+          color="#B640D3"
+          position="2.5 0 -7"
+          onclick="switchScenes(3)"
+          event-set__enter="_event: mouseenter; color: #69157d"
+          event-set__leave="_event: mouseleave; color: #B640D3"
+        >
+          <a-text
+            scale="1.5 1.5 1.5"
+            position="-1.3 0 0.2"
+            text="value:Keyworth; color: white;"
+          ></a-text>
+        </a-box>
+      </a-entity>
+
+      <!-- entity -->
+      <a-entity id="keyworthEntity" visible="false">
+        <a-videosphere
+          id="keyworthVidSphere"
+          src="#keyworthVid"
+        ></a-videosphere>
+        <a-camera position="0 1 1">
+          <a-cursor color="white"></a-cursor>
+        </a-camera>
+        <a-image
+          src="images/pause-button.png"
+          onclick="pauseKeyworth()"
+          
+          position="1.5 1.5 0"
+          height="0.5"
+          width="0.5"
+          
+          event-set__enter="_event: mouseenter; color: #f04385"
+          event-set__leave="_event: mouseleave; color: #ba3467"
+        >
+          <a-text
+            scale=".5 .5 .5"
+            position="-.5 0.1 0.2"
+            text="value:Pause; color: white;"
+          ></a-text>
+        </a-image>
+
+        <a-image
+       src="images/play-button.png"
+          
+          onclick="playKeyworth()"
+          
+          position="1.7 0.8 0"
+          height="0.5"
+          width="0.5"
+         
+          event-set__enter="_event: mouseenter; color: #5882FA"
+          event-set__leave="_event: mouseleave; color: #3c5ab0"
+        >
+          <a-text
+            scale=".5 .5 .5"
+            position="-.5 0.15 0.2"
+            text="value:Play; color: white;"
+          ></a-text>
+        </a-image>
+
+        <a-image
+         src="images/home-page.png"
+          onclick="goMenu()"
+          color="#5e27d6"
+          position="1.7 0.3 0"
+          height="0.5"
+          width="0.5"
+         
+          event-set__enter="_event: mouseenter; color: #7333ff"
+          event-set__leave="_event: mouseleave; color: #5e27d6"
+        >
+          <a-text
+            scale=".5 .5 .5"
+            position="-.5 0.1 0.2"
+            text="value:Home; color: white;"
+          ></a-text>
+        </a-image>
+      </a-entity>
+    </a-scene>
+    <script src="vr.js"></script>
+  </body>
+</html>
